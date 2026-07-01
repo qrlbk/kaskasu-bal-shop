@@ -9,13 +9,13 @@ export interface CustomVolumeInputProps {
 export function CustomVolumeInput({ language, value, onChange }: Readonly<CustomVolumeInputProps>) {
   const label =
     language === 'kz'
-      ? 'Немесе өз көлеміңізді жазыңыз'
-      : 'Или укажите нужный объём';
+      ? 'Немесе өз салмағыңызды жазыңыз'
+      : 'Или укажите нужный вес';
   const placeholder = language === 'kz' ? 'мысалы, 2.5' : 'например, 2.5';
   const hint =
     language === 'kz'
-      ? 'Литр саны / количество литров'
-      : 'Количество литров';
+      ? 'Килограмм саны'
+      : 'Количество килограмм';
 
   return (
     <div className="space-y-3">
@@ -37,7 +37,7 @@ export function CustomVolumeInput({ language, value, onChange }: Readonly<Custom
           aria-label={hint}
         />
         <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-sm md:text-base font-label-md text-on-surface-variant dark:text-outline-variant">
-          L
+          kg
         </span>
       </div>
     </div>

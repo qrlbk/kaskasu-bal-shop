@@ -10,14 +10,15 @@ export interface UseVolumeSelectionResult {
   options: typeof VOLUME_OPTIONS;
 }
 
-function formatCustomLiters(value: string): string {
+function formatCustomWeight(value: string): string {
   const normalized = value.trim().replace(',', '.');
   if (!normalized) {
     return '';
   }
-  return normalized.endsWith('L') || normalized.endsWith('l')
-    ? normalized.replace(/l$/i, ' L')
-    : `${normalized} L`;
+  if (/kg$/i.test(normalized)) {
+    return normalized.replace(/kg$/i, ' kg');
+  }
+  return `${normalized} kg`;
 }
 
 export function useVolumeSelection(initialId: VolumeId = '0.5'): UseVolumeSelectionResult {
@@ -38,7 +39,7 @@ export function useVolumeSelection(initialId: VolumeId = '0.5'): UseVolumeSelect
   }, []);
 
   const orderVolumeLabel = useMemo(() => {
-    const customLabel = formatCustomLiters(customLiters);
+    const customLabel = formatCustomWeight(customLiters);
     if (customLabel) {
       return customLabel;
     }

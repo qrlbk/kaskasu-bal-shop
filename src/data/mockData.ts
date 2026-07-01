@@ -37,9 +37,9 @@ export const SITE_CONFIG = {
 } as const;
 
 export const VOLUME_OPTIONS: VolumeOption[] = [
-  { id: '0.5', label: '0.5 L' },
-  { id: '1.0', label: '1.0 L' },
-  { id: '3.0', label: '3.0 L' },
+  { id: '0.5', label: '0.5 kg' },
+  { id: '1.0', label: '1.0 kg' },
+  { id: '3.0', label: '3.0 kg' },
 ];
 
 export const SITE_COPY: SiteCopy = {
@@ -53,7 +53,7 @@ export const SITE_COPY: SiteCopy = {
     'Қасқасу баурайынан жиналған. Көктемгі гүлдердің хош иісі бар таза әрі табиғи бал.',
   heroLeadRu:
     'Собрано в предгорьях Каскасу. Натуральный, нефильтрованный мед с ароматом весеннего разнотравья.',
-  volumeLabel: 'Көлемін таңдаңыз / Выберите объём',
+  volumeLabel: 'Салмағын таңдаңыз / Выберите вес',
   orderButton: 'Тапсырыс беру',
   orderSubtext: 'Заказать через WhatsApp',
   processingNote: 'Жедел қабылдау / Instant processing',
@@ -77,8 +77,8 @@ export const SITE_COPY: SiteCopy = {
   ],
   whatsappMessage: (volumeLabel, lang) => {
     if (lang === 'ru') {
-      return `Здравствуйте! Хочу заказать мёд «${SITE_COPY.brandName}» объёмом ${volumeLabel}.`;
+      return `Здравствуйте! Хочу заказать мёд «${SITE_COPY.brandName}» весом ${volumeLabel}.`;
     }
-    return `Сәлеметсіз бе! «${SITE_COPY.brandName}» балынан ${volumeLabel} көлемінде тапсырыс бергім келеді.`;
+    return `Сәлеметсіз бе! «${SITE_COPY.brandName}» балынан ${volumeLabel} салмағында тапсырыс бергім келеді.`;
   },
 };
