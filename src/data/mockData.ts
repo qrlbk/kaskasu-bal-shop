@@ -43,7 +43,7 @@ export const VOLUME_OPTIONS: VolumeOption[] = [
 ];
 
 export const SITE_COPY: SiteCopy = {
-  brandName: 'Kaskasu Bal',
+  brandName: 'Kaskasu Baly',
   navOrderShort: 'Тапсырыс',
   navOrderLong: 'Тапсырыс беру / Order',
   heroEyebrow: 'Алғашқы шектеулі жиын',
@@ -77,8 +77,8 @@ export const SITE_COPY: SiteCopy = {
   ],
   whatsappMessage: (volumeLabel, lang) => {
     if (lang === 'ru') {
-      return `Здравствуйте! Хочу заказать мёд «Kaskasu Bal» объёмом ${volumeLabel}.`;
+      return `Здравствуйте! Хочу заказать мёд «${SITE_COPY.brandName}» объёмом ${volumeLabel}.`;
     }
-    return `Сәлеметсіз бе! «Kaskasu Bal» балынан ${volumeLabel} көлемінде тапсырыс бергім келеді.`;
+    return `Сәлеметсіз бе! «${SITE_COPY.brandName}» балынан ${volumeLabel} көлемінде тапсырыс бергім келеді.`;
   },
 };
