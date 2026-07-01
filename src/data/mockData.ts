@@ -34,7 +34,7 @@ export interface SiteCopy {
 
 export const SITE_CONFIG = {
   whatsappPhone: '7064274144',
-  heroImageUrl: '/images/hero-honey.jpg',
+  heroImageUrl: `${import.meta.env.BASE_URL}images/hero-honey.jpg`,
   heroImageAlt: 'Premium Kaskasu Honey Jars',
 } as const;
 
