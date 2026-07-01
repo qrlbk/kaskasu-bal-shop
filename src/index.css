@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .tap-highlight-transparent {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .amber-glow {
+    box-shadow:
+      0 25px 50px -12px rgba(131, 85, 0, 0.15),
+      0 0 0 1px rgba(131, 85, 0, 0.05);
+  }
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-surface text-on-surface font-body-md antialiased overflow-x-hidden;
+    @apply dark:bg-on-background dark:text-surface;
+  }
+
+  ::selection {
+    @apply bg-primary-container text-on-primary-container;
+  }
+}

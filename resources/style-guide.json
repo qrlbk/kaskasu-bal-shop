@@ -1,0 +1,24 @@
+{
+  "project": "Modern Honey WhatsApp Shop",
+  "colors": {
+    "primary": "#835500",
+    "primary-container": "#d99116",
+    "secondary": "#4d6453",
+    "tertiary": "#9b4500",
+    "surface": "#faf9f6",
+    "on-surface": "#1a1c1a",
+    "on-surface-variant": "#524535",
+    "outline-variant": "#d7c3af"
+  },
+  "fonts": {
+    "display": "EB Garamond",
+    "body": "Work Sans"
+  },
+  "spacing": {
+    "container-max": "1280px",
+    "margin-mobile": "20px",
+    "margin-desktop": "48px",
+    "section-gap-mobile": "64px",
+    "section-gap-desktop": "120px"
+  }
+}
