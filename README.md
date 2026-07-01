@@ -21,7 +21,7 @@ npm run dev
 Edit `src/data/mockData.ts` and set your real number:
 
 ```ts
-whatsappPhone: '7064274144', // digits only, no +
+whatsappPhone: '77057809840', // digits only, no +
 ```
 
 ## Deploy (GitHub Pages)
