@@ -4,15 +4,16 @@ import { HeroImage } from '../components/HeroImage';
 import { Navigation } from '../components/Navigation';
 import { NewBadge } from '../components/NewBadge';
 import { OrderPanel } from '../components/OrderPanel';
-import type { Language } from '../data/mockData';
-import type { VolumeId, VolumeOption } from '../data/mockData';
+import type { Language, VolumeId, VolumeOption } from '../data/mockData';
 
 export interface HomePageProps {
   language: Language;
   onLanguageChange: (language: Language) => void;
   volumeOptions: VolumeOption[];
-  selectedVolumeId: VolumeId;
+  selectedVolumeId: VolumeId | null;
+  customLiters: string;
   onSelectVolume: (id: VolumeId) => void;
+  onCustomLitersChange: (value: string) => void;
   onOrder: () => void;
 }
 
@@ -21,7 +22,9 @@ export function HomePage({
   onLanguageChange,
   volumeOptions,
   selectedVolumeId,
+  customLiters,
   onSelectVolume,
+  onCustomLitersChange,
   onOrder,
 }: Readonly<HomePageProps>) {
   return (
@@ -37,7 +40,9 @@ export function HomePage({
                 language={language}
                 options={volumeOptions}
                 selectedId={selectedVolumeId}
+                customLiters={customLiters}
                 onSelectVolume={onSelectVolume}
+                onCustomLitersChange={onCustomLitersChange}
                 onOrder={onOrder}
               />
             </div>

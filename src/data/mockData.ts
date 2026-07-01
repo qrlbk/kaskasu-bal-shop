@@ -5,8 +5,6 @@ export type VolumeId = '0.5' | '1.0' | '3.0';
 export interface VolumeOption {
   id: VolumeId;
   label: string;
-  price: number;
-  priceLabel: string;
 }
 
 export interface SiteCopy {
@@ -29,7 +27,7 @@ export interface SiteCopy {
   footerCopyrightKz: string;
   footerCopyrightRu: string;
   features: Array<{ icon: string; textKz: string; textRu: string }>;
-  whatsappMessage: (volume: VolumeOption, lang: Language) => string;
+  whatsappMessage: (volumeLabel: string, lang: Language) => string;
 }
 
 export const SITE_CONFIG = {
@@ -39,9 +37,9 @@ export const SITE_CONFIG = {
 } as const;
 
 export const VOLUME_OPTIONS: VolumeOption[] = [
-  { id: '0.5', label: '0.5 L', price: 1750, priceLabel: '1 750₸' },
-  { id: '1.0', label: '1.0 L', price: 3500, priceLabel: '3 500 ₸' },
-  { id: '3.0', label: '3.0 L', price: 10500, priceLabel: '10 500 ₸' },
+  { id: '0.5', label: '0.5 L' },
+  { id: '1.0', label: '1.0 L' },
+  { id: '3.0', label: '3.0 L' },
 ];
 
 export const SITE_COPY: SiteCopy = {
@@ -55,7 +53,7 @@ export const SITE_COPY: SiteCopy = {
     'Қасқасу баурайынан жиналған. Көктемгі гүлдердің хош иісі бар таза әрі табиғи бал.',
   heroLeadRu:
     'Собрано в предгорьях Каскасу. Натуральный, нефильтрованный мед с ароматом весеннего разнотравья.',
-  volumeLabel: 'Көлемін таңдаңыз / Выберите объем',
+  volumeLabel: 'Көлемін таңдаңыз / Выберите объём',
   orderButton: 'Тапсырыс беру',
   orderSubtext: 'Заказать через WhatsApp',
   processingNote: 'Жедел қабылдау / Instant processing',
@@ -77,10 +75,10 @@ export const SITE_COPY: SiteCopy = {
       textRu: 'Аромат горных лугов',
     },
   ],
-  whatsappMessage: (volume, lang) => {
+  whatsappMessage: (volumeLabel, lang) => {
     if (lang === 'ru') {
-      return `Здравствуйте! Хочу заказать мёд «Kaskasu Bal» объёмом ${volume.label} (${volume.priceLabel}).`;
+      return `Здравствуйте! Хочу заказать мёд «Kaskasu Bal» объёмом ${volumeLabel}.`;
     }
-    return `Сәлеметсіз бе! «Kaskasu Bal» балынан ${volume.label} көлемінде (${volume.priceLabel}) тапсырыс бергім келеді.`;
+    return `Сәлеметсіз бе! «Kaskasu Bal» балынан ${volumeLabel} көлемінде тапсырыс бергім келеді.`;
   },
 };

@@ -9,7 +9,14 @@ export interface AppProps {
 
 function App(_props: AppProps) {
   const { language, setLanguage } = useLanguage('kz');
-  const { options, selectedId, selectedVolume, selectVolume } = useVolumeSelection('0.5');
+  const {
+    options,
+    selectedId,
+    customLiters,
+    orderVolumeLabel,
+    selectVolume,
+    setCustomLiters,
+  } = useVolumeSelection('0.5');
   const { sendOrder } = useWhatsAppOrder();
 
   return (
@@ -18,8 +25,10 @@ function App(_props: AppProps) {
       onLanguageChange={setLanguage}
       volumeOptions={options}
       selectedVolumeId={selectedId}
+      customLiters={customLiters}
       onSelectVolume={selectVolume}
-      onOrder={() => sendOrder(selectedVolume, language)}
+      onCustomLitersChange={setCustomLiters}
+      onOrder={() => sendOrder(orderVolumeLabel, language)}
     />
   );
 }

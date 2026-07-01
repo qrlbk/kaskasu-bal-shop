@@ -23,9 +23,6 @@ export function VolumeOptionButton({
       aria-pressed={isSelected}
     >
       <span className="text-lg md:text-2xl font-headline-md">{option.label}</span>
-      <span className={`text-[10px] md:text-xs mt-1 ${isSelected ? 'font-medium opacity-70' : 'opacity-60'}`}>
-        {option.priceLabel}
-      </span>
     </button>
   );
 }

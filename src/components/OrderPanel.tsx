@@ -6,8 +6,10 @@ import { WhatsAppButton } from './WhatsAppButton';
 export interface OrderPanelProps {
   language: Language;
   options: VolumeOption[];
-  selectedId: VolumeId;
+  selectedId: VolumeId | null;
+  customLiters: string;
   onSelectVolume: (id: VolumeId) => void;
+  onCustomLitersChange: (value: string) => void;
   onOrder: () => void;
 }
 
@@ -15,7 +17,9 @@ export function OrderPanel({
   language,
   options,
   selectedId,
+  customLiters,
   onSelectVolume,
+  onCustomLitersChange,
   onOrder,
 }: Readonly<OrderPanelProps>) {
   return (
@@ -23,7 +27,14 @@ export function OrderPanel({
       id="order"
       className="bg-surface-container-low p-6 md:p-10 rounded-[2rem] border border-outline-variant/30 space-y-8 md:space-y-10 shadow-sm dark:bg-surface-container dark:border-outline/30 scroll-mt-28"
     >
-      <VolumeSelector options={options} selectedId={selectedId} onSelect={onSelectVolume} />
+      <VolumeSelector
+        language={language}
+        options={options}
+        selectedId={selectedId}
+        customLiters={customLiters}
+        onSelect={onSelectVolume}
+        onCustomChange={onCustomLitersChange}
+      />
       <FeatureList language={language} />
       <WhatsAppButton onClick={onOrder} />
     </div>
